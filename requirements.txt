@@ -1,0 +1,28 @@
+# --- Core Application Dependencies ---
+fastapi==0.115.12
+uvicorn==0.34.1
+pydantic==2.10.6
+python-dotenv==1.2.1
+starlette==0.46.2
+click==8.1.8
+
+# --- LangChain Ecosystem (The environment defining fix) ---
+langchain==0.3.20
+langchain-core==0.3.56
+langchain-community==0.3.19
+langchain-text-splitters==0.3.6
+
+# --- RAG/Model Dependencies ---
+PyMuPDF==1.25.3
+faiss-cpu==1.10.0
+sentence-transformers==3.4.1
+httpx==0.28.1
+
+# --- Utility Dependencies ---
+diskcache==5.6.3
+numpy==2.2.6
+orjson==3.10.15
+typing-extensions==4.15.0
+
+# --- others Dependencies ---
+rank-bm25==0.2.2
