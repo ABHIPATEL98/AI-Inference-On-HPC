@@ -1,7 +1,3 @@
-Here is a comprehensive, professional, and technical README file designed for an HPC environment.
-
------
-
 # vLLM Deployment Guide: Single-Node & Multi-Node Inference on HPC
 
 This documentation outlines the procedures for installing, configuring, and deploying the vLLM (Versatile Large Language Model) inference engine on High-Performance Computing (HPC) clusters. It covers three specific architectural configurations:
