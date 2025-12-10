@@ -242,10 +242,7 @@ export NCCL_IB_GID_INDEX=3
   * `NCCL_IB_HCA=mlx5`: Forces usage of Mellanox ConnectX adapters (verify your HCA name with `ibdev2netdev`).
   * `NCCL_SOCKET_IFNAME`: Specifies the explicit interface for socket communication (ensure this matches your `ip a` output).
 
-<!-- end list -->
 
-```
-```
 2.  **OOM (Out Of Memory):** Reduce `--gpu-memory-utilization` to `0.90` or reduce `--max-num-batched-tokens`.
 3.  **Connection Refused:** Ensure you are using the correct IP address and that the `vllm serve` command includes `--host 0.0.0.0`.
 
