@@ -1,2 +1,2 @@
-# AI-Inference-On-HPC
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/ce7913bf-c90f-42cf-9e51-ed9beadab349" /># AI-Inference-On-HPC
 A comprehensive framework for multi-node, multi-GPU scalable LLM inference on HPC systems using vLLM and Ollama. Includes distributed deployment templates, benchmarking workflows, and chatbot/RAG pipelines for high-throughput, production-grade AI services
