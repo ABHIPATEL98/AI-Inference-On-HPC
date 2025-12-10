@@ -226,8 +226,26 @@ curl http://172.17.1.1:8000/v1/chat/completions \
 ```
 
 ### **Troubleshooting Tips**
+**1. Advanced Network/NCCL Debugging:**
+If you encounter NCCL timeouts, initialization failures, or communication errors between nodes, you may need to explicitly define the network interface and debug parameters in your `~/.bashrc` or export them before running the script.
 
-1.  **NCCL Errors:** If you encounter timeouts, ensure firewalls are disabled between nodes or that the correct network interface (Infiniband) is being used by setting `export NCCL_SOCKET_IFNAME=ib0` (or your specific interface).
+Add the following environment variables:
+
+```bash
+export NCCL_DEBUG=INFO
+export NCCL_IB_HCA=mlx5
+export NCCL_SOCKET_IFNAME=ib1
+export NCCL_IB_GID_INDEX=3
+````
+
+  * `NCCL_DEBUG=INFO`: Provides verbose logs to diagnose communication hang-ups.
+  * `NCCL_IB_HCA=mlx5`: Forces usage of Mellanox ConnectX adapters (verify your HCA name with `ibdev2netdev`).
+  * `NCCL_SOCKET_IFNAME`: Specifies the explicit interface for socket communication (ensure this matches your `ip a` output).
+
+<!-- end list -->
+
+```
+```
 2.  **OOM (Out Of Memory):** Reduce `--gpu-memory-utilization` to `0.90` or reduce `--max-num-batched-tokens`.
 3.  **Connection Refused:** Ensure you are using the correct IP address and that the `vllm serve` command includes `--host 0.0.0.0`.
 
